@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TabControls from './components/TabControls/TabControls';
-
+import TabList from './components/TabLIst/TabList';
 export default function App() {
   const [Tab1, SetTab1] = useState(true);
   const [Tab2, SetTab2] = useState(false);
@@ -28,15 +28,12 @@ export default function App() {
   return (
     <div>
       <TabControls onHandlerButton={handlerButton} />
-      <ul className="tabList">
-        {Tab1 && <li className="Tab">activeTab1</li>}
-        {Tab2 && <li className="Tab">activeTab2</li>}
-        {Tab3 && <li className="Tab">activeTab3</li>}
-      </ul>
+      <TabList Tab1={Tab1} Tab2={Tab2} Tab3={Tab3} />
     </div>
   );
 }
 
+// use class component
 // export default class App extends Component {
 
 //   state = {
